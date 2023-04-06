@@ -6,3 +6,9 @@
 //
 
 import Foundation
+import FirebaseCore
+import FirebaseFirestore
+
+var app = FirebaseApp.configure()
+
+let db = Firestore.firestore()

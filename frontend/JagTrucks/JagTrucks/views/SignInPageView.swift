@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct SignInPageViews: View {
+struct SignInPageView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("Hi")
     }
 }
 
-struct SignInPageViews_Previews: PreviewProvider {
+struct SignInPageView_Previews: PreviewProvider {
     static var previews: some View {
-        SignInPageViews()
+        SignInPageView()
     }
 }

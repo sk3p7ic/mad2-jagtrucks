@@ -8,9 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    func t() -> String {
+        let truck = masterTruckState.getTruck(truckId: "xOZp8IkysR0evmqWsMyD")
+        print("\(truck)")
+        return "JagTrucks"
+    }
     var body: some View {
         VStack {
-            Text("JagTrucks")
+            Text(t())
                 .font(.largeTitle)
         }
         .padding()
