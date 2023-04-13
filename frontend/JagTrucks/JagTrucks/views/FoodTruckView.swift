@@ -6,13 +6,16 @@
 //
 
 import SwiftUI
+import FirebaseStorage
 
 struct FoodTruckView: View {
     var truckId: String
     @State var truck: FirebaseFoodTruck = FirebaseFoodTruck()
+    @State var profileImageUrl = URL(string: "")
 
     var body: some View {
         VStack {
+            AsyncImage(url: profileImageUrl)
             Text(truck.name)
         }
         .task {
@@ -24,6 +27,13 @@ struct FoodTruckView: View {
         let retrievedTruck = await masterTruckState.getTruck(truckId: truckId)
         if retrievedTruck != nil {
             truck = retrievedTruck!
+            fbStorageRef.child("/trucks/\(truckId).jpg").downloadURL { (url, error) in
+                if error != nil {
+                    print(error as Any)
+                    return
+                }
+                profileImageUrl = url
+            }
         }
         print(truck as Any)
     }
