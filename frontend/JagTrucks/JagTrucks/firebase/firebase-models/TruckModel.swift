@@ -42,4 +42,11 @@ struct FirebaseFoodTruck {
         let rawSocials = data["socials"] as? [[String: String]] ?? []
         socials = rawSocials.map {FirebaseFoodTruckSocial(data: $0)}
     }
+    
+    init() {
+        truckID = ""
+        genre = ""
+        name = "Could not get truck"
+        socials = [FirebaseFoodTruckSocial]()
+    }
 }

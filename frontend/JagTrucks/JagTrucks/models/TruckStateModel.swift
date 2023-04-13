@@ -19,12 +19,15 @@ class FoodTruckState: ObservableObject {
         print("\(trucks)")
     }
     
-    func getTruck(truckId: String) -> FirebaseFoodTruck? {
+    func getTruck(truckId: String) async -> FirebaseFoodTruck? {
         var truck: FirebaseFoodTruck? = nil
         truck = trucks.first(where: { $0.truckID == truckId })
         
         if (truck == nil) {
-            getFoodTruckFromFirestore(truckId: truckId)
+            let newTruck = await getFoodTruckFromFirestore(truckId: truckId)
+            if newTruck != nil {
+                trucks.append(newTruck!)
+            }
             truck = trucks.first(where: { $0.truckID == truckId })
         }
         

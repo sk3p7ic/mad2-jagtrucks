@@ -9,16 +9,11 @@ import Foundation
 import FirebaseFirestore
 import Firebase
 
-func getFoodTruckFromFirestore(truckId: String) {
-    let docRef = db.collection("trucks").document(truckId)
-    
-    docRef.getDocument { (document, error) in
-        if let document = document, document.exists {
-            let truck = FirebaseFoodTruck(snap: document)
-            masterTruckState.addTruck(truck: truck)
-        }
-        else {
-            print("Document not found!")
-        }
+func getFoodTruckFromFirestore(truckId: String) async -> FirebaseFoodTruck? {
+    let doc = try? await db.collection("trucks").document(truckId).getDocument()
+    if doc == nil {
+        print("Document not found")
+        return nil
     }
+    return FirebaseFoodTruck(snap: doc!)
 }
