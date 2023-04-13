@@ -15,12 +15,15 @@ struct FoodTruckView: View {
 
     var body: some View {
         VStack {
-            AsyncImage(url: profileImageUrl)
+            AsyncImage(url: profileImageUrl, scale: 2)
             Text(truck.name)
         }
         .task {
             await updateTruck()
         }
+        .aspectRatio( contentMode: .fill)
+        .frame(width: 50, height: 50)
+        
     }
     
     func updateTruck() async {

@@ -29,7 +29,6 @@
 		F1EA148929D364E300291765 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EA148829D364E300291765 /* Authentication.swift */; };
 		F1EA148C29D3731C00291765 /* SignInPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EA148B29D3731C00291765 /* SignInPageView.swift */; };
 		F1EA148F29D3745500291765 /* FASwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = F1EA148E29D3745500291765 /* FASwiftUI */; };
-		F1EA149129D3747A00291765 /* icons.json in Resources */ = {isa = PBXBuildFile; fileRef = F1EA149029D3747A00291765 /* icons.json */; };
 		F1EA149929D374D900291765 /* Font Awesome 6 Brands-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = F1EA149729D3749800291765 /* Font Awesome 6 Brands-Regular-400.otf */; };
 		F1EA149A29D374DF00291765 /* Font Awesome 6 Free-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = F1EA149629D3749800291765 /* Font Awesome 6 Free-Regular-400.otf */; };
 		F1EA149B29D374E300291765 /* Font Awesome 6 Free-Solid-900.otf in Resources */ = {isa = PBXBuildFile; fileRef = F1EA149529D3749800291765 /* Font Awesome 6 Free-Solid-900.otf */; };
@@ -53,7 +52,6 @@
 		F1EA148629D3645A00291765 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F1EA148829D364E300291765 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		F1EA148B29D3731C00291765 /* SignInPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPageView.swift; sourceTree = "<group>"; };
-		F1EA149029D3747A00291765 /* icons.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = icons.json; path = "../../../../../../Downloads/fontawesome-free-6.4.0-desktop/metadata/icons.json"; sourceTree = "<group>"; };
 		F1EA149529D3749800291765 /* Font Awesome 6 Free-Solid-900.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 6 Free-Solid-900.otf"; sourceTree = "<group>"; };
 		F1EA149629D3749800291765 /* Font Awesome 6 Free-Regular-400.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 6 Free-Regular-400.otf"; sourceTree = "<group>"; };
 		F1EA149729D3749800291765 /* Font Awesome 6 Brands-Regular-400.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 6 Brands-Regular-400.otf"; sourceTree = "<group>"; };
@@ -97,7 +95,6 @@
 			isa = PBXGroup;
 			children = (
 				F144157429DF4CC00003E5F3 /* models */,
-				F1EA149029D3747A00291765 /* icons.json */,
 				F1EA148A29D3729E00291765 /* views */,
 				F1EA148729D364C100291765 /* firebase */,
 				F1EA148629D3645A00291765 /* Info.plist */,
@@ -236,7 +233,6 @@
 				F11E3C8429CDD6AB003BE1EE /* Preview Assets.xcassets in Resources */,
 				F1EA149B29D374E300291765 /* Font Awesome 6 Free-Solid-900.otf in Resources */,
 				F11E3C8129CDD6AB003BE1EE /* Assets.xcassets in Resources */,
-				F1EA149129D3747A00291765 /* icons.json in Resources */,
 				F1EA147829D35F5700291765 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
