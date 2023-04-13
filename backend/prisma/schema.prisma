@@ -1,0 +1,58 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum SocialProviderType {
+  PERSONAL
+  SOCIAL_MEDIA
+}
+
+model SocialProvider {
+  id           String             @id @default(cuid())
+  name         String             @unique
+  baseUrl      String
+  providerType SocialProviderType
+  socialUses   TruckSocial[]
+}
+
+model TruckSocial {
+  id         String         @id @default(cuid())
+  handle     String?
+  providerId String
+  provider   SocialProvider @relation(fields: [providerId], references: [id], onDelete: Cascade)
+  truckId    String
+  truckUse   FoodTruck      @relation(fields: [truckId], references: [id], onDelete: Cascade)
+}
+
+model FoodTruck {
+  id                   String          @id @default(cuid())
+  name                 String
+  imagePath            String?
+  foodGenreId          String
+  acceptsDiningDollars Boolean
+  menu                 Json            @db.Json
+  socials              TruckSocial[]
+  schedule             ScheduleEntry[]
+}
+
+model ScheduleEntry {
+  id         String        @id @default(cuid())
+  startDate  DateTime      @db.Timestamp()
+  endDate    DateTime      @db.Timestamp()
+  truckId    String
+  locationId String
+  truck      FoodTruck     @relation(fields: [truckId], references: [id], onDelete: Cascade)
+  location   LocationEntry @relation(fields: [locationId], references: [id], onDelete: Cascade)
+}
+
+model LocationEntry {
+  id              String          @id @default(cuid())
+  name            String
+  address         String          @db.Text
+  scheduleEntries ScheduleEntry[]
+}
