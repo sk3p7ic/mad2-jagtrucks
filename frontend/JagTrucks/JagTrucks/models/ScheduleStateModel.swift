@@ -18,7 +18,7 @@ class ScheduleState: ObservableObject {
         schedule[key] = sched
     }
     
-    func getMonth(month: Int8, year: Int32) -> FirebaseMonthlySchedule {
+    func getMonth(month: Int8, year: Int32) async -> FirebaseMonthlySchedule {
         let key = String(format: "%d_%02d", year, month)
         let sched = schedule[key]
         
@@ -26,7 +26,8 @@ class ScheduleState: ObservableObject {
             return sched!
         }
         
-        getScheduleForMonth(month: month, year: year)
+        let newTruck = await getScheduleForMonth(month: month, year: year)
+        schedule[key] = newTruck != nil ? newTruck : FirebaseMonthlySchedule()
         return schedule[key]!
     }
 }

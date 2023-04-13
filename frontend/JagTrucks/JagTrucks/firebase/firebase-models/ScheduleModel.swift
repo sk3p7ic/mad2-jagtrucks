@@ -33,4 +33,10 @@ struct FirebaseMonthlySchedule {
         let rawListings: [[String: Any]] = doc.data()!["listings"]! as? [[String: Any]] ?? []
         listings = rawListings.map { FirebaseMonthlyScheduleEntry(data: $0) }
     }
+    
+    init() {
+        month = 0
+        year = 2023
+        listings = [FirebaseMonthlyScheduleEntry]()
+    }
 }
