@@ -11,6 +11,7 @@
 		F11E3C7F29CDD6AA003BE1EE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11E3C7E29CDD6AA003BE1EE /* ContentView.swift */; };
 		F11E3C8129CDD6AB003BE1EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F11E3C8029CDD6AB003BE1EE /* Assets.xcassets */; };
 		F11E3C8429CDD6AB003BE1EE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F11E3C8329CDD6AB003BE1EE /* Preview Assets.xcassets */; };
+		F11F9A9E29F4D20A004005F2 /* FoodTruckListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11F9A9D29F4D20A004005F2 /* FoodTruckListView.swift */; };
 		F1300C6429E8342200742C99 /* FoodTruckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1300C6329E8342200742C99 /* FoodTruckView.swift */; };
 		F144157629DF4CDF0003E5F3 /* TruckStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F144157529DF4CDF0003E5F3 /* TruckStateModel.swift */; };
 		F144157829DF52470003E5F3 /* ScheduleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F144157729DF52470003E5F3 /* ScheduleModel.swift */; };
@@ -40,6 +41,7 @@
 		F11E3C7E29CDD6AA003BE1EE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F11E3C8029CDD6AB003BE1EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F11E3C8329CDD6AB003BE1EE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F11F9A9D29F4D20A004005F2 /* FoodTruckListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTruckListView.swift; sourceTree = "<group>"; };
 		F1300C6329E8342200742C99 /* FoodTruckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTruckView.swift; sourceTree = "<group>"; };
 		F144157529DF4CDF0003E5F3 /* TruckStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TruckStateModel.swift; sourceTree = "<group>"; };
 		F144157729DF52470003E5F3 /* ScheduleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleModel.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				F11E3C7E29CDD6AA003BE1EE /* ContentView.swift */,
 				F1EA148B29D3731C00291765 /* SignInPageView.swift */,
 				F1300C6329E8342200742C99 /* FoodTruckView.swift */,
+				F11F9A9D29F4D20A004005F2 /* FoodTruckListView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 				F11E3C7F29CDD6AA003BE1EE /* ContentView.swift in Sources */,
 				F11E3C7D29CDD6AA003BE1EE /* JagTrucksApp.swift in Sources */,
 				F1300C6429E8342200742C99 /* FoodTruckView.swift in Sources */,
+				F11F9A9E29F4D20A004005F2 /* FoodTruckListView.swift in Sources */,
 				F144157C29DF5A150003E5F3 /* ScheduleStateModel.swift in Sources */,
 				F1EA148929D364E300291765 /* Authentication.swift in Sources */,
 				F144157829DF52470003E5F3 /* ScheduleModel.swift in Sources */,

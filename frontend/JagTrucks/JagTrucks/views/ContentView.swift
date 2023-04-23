@@ -7,12 +7,31 @@
 
 import SwiftUI
 
+private struct HomeView: View {
+    var body: some View {
+        NavigationView {
+            Text("Hello world!")
+                .navigationTitle("Home")
+        }
+    }
+}
+
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Text("JagTrucks")
+        TabView {
+            HomeView()
+                .tabItem {
+                    Label("Home", systemImage: "house")
+                }
+            HomeView()
+                .tabItem {
+                    Label("Schedule", systemImage: "calendar")
+                }
+            FoodTruckListView()
+                .tabItem {
+                    Label("Trucks", systemImage: "box.truck")
+                }
         }
-        .padding()
     }
 }
 
