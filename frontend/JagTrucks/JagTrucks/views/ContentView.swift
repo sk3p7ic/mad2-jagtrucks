@@ -17,6 +17,8 @@ private struct HomeView: View {
 }
 
 struct ContentView: View {
+    @ObservedObject var truckState = FoodTruckState()
+    
     var body: some View {
         TabView {
             HomeView()
@@ -28,17 +30,19 @@ struct ContentView: View {
                     Label("Schedule", systemImage: "calendar")
                 }
             FoodTruckListView()
+                .environmentObject(truckState)
                 .tabItem {
                     Label("Trucks", systemImage: "box.truck")
                 }
         }
         .task {
             await fetchTrucks()
+            print(truckState.trucks)
         }
     }
     
     func fetchTrucks() async {
-        await masterTruckState.getAllTruckIds()
+        await truckState.getAllTruckIds()
     }
 }
 

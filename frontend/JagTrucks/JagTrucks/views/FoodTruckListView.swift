@@ -8,6 +8,7 @@
 import SwiftUI
 
 private struct FoodTruckListingItem: View {
+    @EnvironmentObject var truckState: FoodTruckState
     var truckId: String
     @State var truck: FirebaseFoodTruck = FirebaseFoodTruck()
     @State var profileImageUrl = URL(string: "")
@@ -36,7 +37,7 @@ private struct FoodTruckListingItem: View {
     }
     
     func updateTruck() async {
-        let retrievedTruck = await masterTruckState.getTruck(truckId: truckId)
+        let retrievedTruck = await truckState.getTruck(truckId: truckId)
         if retrievedTruck != nil {
             truck = retrievedTruck!
             fbStorageRef.child("/trucks/\(truckId).jpg").downloadURL { (url, error) in
@@ -52,10 +53,14 @@ private struct FoodTruckListingItem: View {
 }
 
 struct FoodTruckListView: View {
+    @EnvironmentObject var truckState: FoodTruckState
     var body: some View {
         NavigationView {
             VStack {
-                FoodTruckListingItem(truckId: "xOZp8IkysR0evmqWsMyD")
+                ForEach(truckState.trucks, id: \.truckID) { truck in
+                    FoodTruckListingItem(truckId: truck.truckID)
+                        .environmentObject(truckState)
+                }
             }
             .navigationTitle("Trucks")
         }
@@ -64,6 +69,6 @@ struct FoodTruckListView: View {
 
 struct FoodTruckListView_Previews: PreviewProvider {
     static var previews: some View {
-        FoodTruckListView()
+        FoodTruckListView().environmentObject(masterTruckState)
     }
 }
