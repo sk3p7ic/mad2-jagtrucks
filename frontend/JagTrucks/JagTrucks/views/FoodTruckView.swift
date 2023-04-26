@@ -15,21 +15,33 @@ struct FoodTruckView: View {
     @State var profileImageUrl = URL(string: "")
 
     var body: some View {
-        VStack {
-            AsyncImage(url: profileImageUrl) { image in
-                image
-                    .resizable()
-                    .scaledToFit()
-            } placeholder: {
-                Text("")
+        ScrollView {
+            VStack {
+                AsyncImage(url: profileImageUrl) { image in
+                    image
+                        .resizable()
+                        .scaledToFit()
+                } placeholder: {
+                    Text("")
+                }
+                VStack {
+                    ForEach(truck.socials, id: \.value) { social in
+                        HStack {
+                            Image(systemName: "globe")
+                            Text("[\(social.short)](\(social.value))")
+                                .font(.title3)
+                            Spacer()
+                        }
+                    }
+                }
+                .padding()
             }
-            Text(truck.name)
-                .font(.largeTitle)
+            .task {
+                await updateTruck()
+            }
+            
         }
-        .task {
-            await updateTruck()
-        }
-        
+        .navigationTitle(truck.name)
     }
     
     func updateTruck() async {

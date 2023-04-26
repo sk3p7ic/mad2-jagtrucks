@@ -16,6 +16,7 @@ enum FirebaseFoodTruckSocialType {
 struct FirebaseFoodTruckSocial {
     let type: FirebaseFoodTruckSocialType
     let value: String
+    let short: String
     
     init(data: [String: String]) {
         switch (data["type"] as String? ?? "") {
@@ -25,6 +26,7 @@ struct FirebaseFoodTruckSocial {
             type = FirebaseFoodTruckSocialType.other
         }
         value = data["value"] as String? ?? ""
+        short = data["short"] as String? ?? ""
     }
 }
 
