@@ -16,7 +16,15 @@ struct FoodTruckView: View {
     var body: some View {
         VStack {
             AsyncImage(url: profileImageUrl, scale: 2)
+            AsyncImage(url: profileImageUrl) { image in
+                image
+                    .resizable()
+                    .scaledToFit()
+            } placeholder: {
+                Text("")
+            }
             Text(truck.name)
+                .font(.largeTitle)
         }
         .task {
             await updateTruck()
