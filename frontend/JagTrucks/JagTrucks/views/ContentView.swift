@@ -18,6 +18,7 @@ private struct HomeView: View {
 
 struct ContentView: View {
     @ObservedObject var truckState = FoodTruckState()
+    @ObservedObject var scheduleState = ScheduleState()
     
     var body: some View {
         TabView {
@@ -38,11 +39,17 @@ struct ContentView: View {
         .task {
             await fetchTrucks()
             print(truckState.trucks)
+            await fetchSchedules()
+            print(scheduleState.schedule)
         }
     }
     
     func fetchTrucks() async {
         await truckState.getAllTruckIds()
+    }
+    
+    func fetchSchedules() async {
+        await scheduleState.getAllMonthlySchedules()
     }
 }
 

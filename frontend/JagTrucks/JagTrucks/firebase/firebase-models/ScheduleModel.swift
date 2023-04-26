@@ -34,6 +34,14 @@ struct FirebaseMonthlySchedule {
         listings = rawListings.map { FirebaseMonthlyScheduleEntry(data: $0) }
     }
     
+    init(qdoc: QueryDocumentSnapshot) {
+        let docId: [String.SubSequence] = qdoc.documentID.split(separator: "_")
+        month = Int8(docId[1])!
+        year = Int16(docId[0])!
+        let rawListings: [[String: Any]] = qdoc.data()["listings"]! as? [[String: Any]] ?? []
+        listings = rawListings.map { FirebaseMonthlyScheduleEntry(data: $0) }
+    }
+    
     init() {
         month = 0
         year = 2023

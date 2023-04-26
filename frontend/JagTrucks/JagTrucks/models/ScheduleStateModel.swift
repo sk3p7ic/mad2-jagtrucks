@@ -30,6 +30,15 @@ class ScheduleState: ObservableObject {
         schedule[key] = newTruck != nil ? newTruck : FirebaseMonthlySchedule()
         return schedule[key]!
     }
+    
+    func getAllMonthlySchedules() async {
+        let scheds = await getAllScheduleItems()
+        print(scheds)
+        for s in scheds {
+            let key = String(format: "%d_%02d", s.year, s.month)
+            schedule[key] = s
+        }
+    }
 }
 
 let masterSchedule = ScheduleState()
