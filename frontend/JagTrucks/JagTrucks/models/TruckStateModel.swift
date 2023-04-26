@@ -33,6 +33,13 @@ class FoodTruckState: ObservableObject {
         
         return truck
     }
+    
+    func getAllTruckIds() async {
+        let allTrucks = await getAllFoodTrucksInCollection()
+        for t in allTrucks {
+            trucks.append(t)
+        }
+    }
 }
 
 let masterTruckState = FoodTruckState()

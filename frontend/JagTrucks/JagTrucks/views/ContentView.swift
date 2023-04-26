@@ -32,6 +32,13 @@ struct ContentView: View {
                     Label("Trucks", systemImage: "box.truck")
                 }
         }
+        .task {
+            await fetchTrucks()
+        }
+    }
+    
+    func fetchTrucks() async {
+        await masterTruckState.getAllTruckIds()
     }
 }
 
