@@ -43,6 +43,15 @@ struct FirebaseFoodTruck {
         socials = rawSocials.map {FirebaseFoodTruckSocial(data: $0)}
     }
     
+    init(qsnap: QueryDocumentSnapshot) {
+        truckID = qsnap.documentID
+        let data = qsnap.data()
+        genre = data["genre"] as? String ?? ""
+        name = data["name"] as? String ?? "Could not get name."
+        let rawSocials = data["socials"] as? [[String: String]] ?? []
+        socials = rawSocials.map {FirebaseFoodTruckSocial(data: $0)}
+    }
+    
     init() {
         truckID = ""
         genre = ""

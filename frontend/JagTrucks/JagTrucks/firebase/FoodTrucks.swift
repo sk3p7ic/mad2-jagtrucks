@@ -17,3 +17,16 @@ func getFoodTruckFromFirestore(truckId: String) async -> FirebaseFoodTruck? {
     }
     return FirebaseFoodTruck(snap: doc!)
 }
+
+func getAllFoodTrucksInCollection() async -> [FirebaseFoodTruck] {
+    var trucks = [FirebaseFoodTruck]()
+    let docs = try? await db.collection("trucks").getDocuments()
+    if docs == nil {
+        print("Could not get documents")
+        return [FirebaseFoodTruck]()
+    }
+    for d in docs!.documents {
+        trucks.append(FirebaseFoodTruck(qsnap: d))
+    }
+    return trucks
+}
