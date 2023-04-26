@@ -9,13 +9,13 @@ import SwiftUI
 import FirebaseStorage
 
 struct FoodTruckView: View {
+    @EnvironmentObject var truckState: FoodTruckState
     var truckId: String
     @State var truck: FirebaseFoodTruck = FirebaseFoodTruck()
     @State var profileImageUrl = URL(string: "")
 
     var body: some View {
         VStack {
-            AsyncImage(url: profileImageUrl, scale: 2)
             AsyncImage(url: profileImageUrl) { image in
                 image
                     .resizable()
@@ -29,13 +29,11 @@ struct FoodTruckView: View {
         .task {
             await updateTruck()
         }
-        .aspectRatio( contentMode: .fill)
-        .frame(width: 50, height: 50)
         
     }
     
     func updateTruck() async {
-        let retrievedTruck = await masterTruckState.getTruck(truckId: truckId)
+        let retrievedTruck = await truckState.getTruck(truckId: truckId)
         if retrievedTruck != nil {
             truck = retrievedTruck!
             fbStorageRef.child("/trucks/\(truckId).jpg").downloadURL { (url, error) in
@@ -52,6 +50,6 @@ struct FoodTruckView: View {
 
 struct FoodTruckView_Previews: PreviewProvider {
     static var previews: some View {
-        FoodTruckView(truckId: "xOZp8IkysR0evmqWsMyD")
+        FoodTruckView(truckId: "xOZp8IkysR0evmqWsMyD").environmentObject(masterTruckState)
     }
 }

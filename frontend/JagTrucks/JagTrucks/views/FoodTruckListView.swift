@@ -14,26 +14,31 @@ private struct FoodTruckListingItem: View {
     @State var profileImageUrl = URL(string: "")
     
     var body: some View {
-        HStack {
-            AsyncImage(url: profileImageUrl) { image in
-                image
-                    .resizable()
-                    .scaledToFit()
-            } placeholder: {
-                Text("Image")
+        NavigationLink {
+            FoodTruckView(truckId: truckId)
+                .environmentObject(truckState)
+        } label: {
+            HStack {
+                AsyncImage(url: profileImageUrl) { image in
+                    image
+                        .resizable()
+                        .scaledToFit()
+                } placeholder: {
+                    Text("")
+                }
+                Spacer()
+                VStack {
+                    Text("\(truck.name)")
+                        .font(.title)
+                    Text("\(truck.genre)")
+                }
+                .frame(minWidth: 0, maxWidth: .infinity)
             }
-            Spacer()
-            VStack {
-                Text("\(truck.name)")
-                    .font(.title)
-                Text("\(truck.genre)")
+            .task {
+                await updateTruck()
             }
-            .frame(minWidth: 0, maxWidth: .infinity)
+            .padding()
         }
-        .task {
-            await updateTruck()
-        }
-        .padding()
     }
     
     func updateTruck() async {
