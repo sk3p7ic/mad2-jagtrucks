@@ -13,6 +13,7 @@
 		F11E3C8429CDD6AB003BE1EE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F11E3C8329CDD6AB003BE1EE /* Preview Assets.xcassets */; };
 		F11F9A9E29F4D20A004005F2 /* FoodTruckListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11F9A9D29F4D20A004005F2 /* FoodTruckListView.swift */; };
 		F1300C6429E8342200742C99 /* FoodTruckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1300C6329E8342200742C99 /* FoodTruckView.swift */; };
+		F142AE1529F9F0C3003CEB7D /* hybrid-storytellers-8DrHBSsC-A4-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F142AE1429F9F0C3003CEB7D /* hybrid-storytellers-8DrHBSsC-A4-unsplash.jpg */; };
 		F144157629DF4CDF0003E5F3 /* TruckStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F144157529DF4CDF0003E5F3 /* TruckStateModel.swift */; };
 		F144157829DF52470003E5F3 /* ScheduleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F144157729DF52470003E5F3 /* ScheduleModel.swift */; };
 		F144157A29DF58C50003E5F3 /* Schedules.swift in Sources */ = {isa = PBXBuildFile; fileRef = F144157929DF58C50003E5F3 /* Schedules.swift */; };
@@ -43,6 +44,7 @@
 		F11E3C8329CDD6AB003BE1EE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F11F9A9D29F4D20A004005F2 /* FoodTruckListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTruckListView.swift; sourceTree = "<group>"; };
 		F1300C6329E8342200742C99 /* FoodTruckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTruckView.swift; sourceTree = "<group>"; };
+		F142AE1429F9F0C3003CEB7D /* hybrid-storytellers-8DrHBSsC-A4-unsplash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "hybrid-storytellers-8DrHBSsC-A4-unsplash.jpg"; path = "../../../../../../Downloads/hybrid-storytellers-8DrHBSsC-A4-unsplash.jpg"; sourceTree = "<group>"; };
 		F144157529DF4CDF0003E5F3 /* TruckStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TruckStateModel.swift; sourceTree = "<group>"; };
 		F144157729DF52470003E5F3 /* ScheduleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleModel.swift; sourceTree = "<group>"; };
 		F144157929DF58C50003E5F3 /* Schedules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedules.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				F1EA148629D3645A00291765 /* Info.plist */,
 				F11E3C7C29CDD6AA003BE1EE /* JagTrucksApp.swift */,
 				F11E3C8029CDD6AB003BE1EE /* Assets.xcassets */,
+				F142AE1429F9F0C3003CEB7D /* hybrid-storytellers-8DrHBSsC-A4-unsplash.jpg */,
 				F1EA149729D3749800291765 /* Font Awesome 6 Brands-Regular-400.otf */,
 				F1EA149629D3749800291765 /* Font Awesome 6 Free-Regular-400.otf */,
 				F1EA149529D3749800291765 /* Font Awesome 6 Free-Solid-900.otf */,
@@ -237,6 +240,7 @@
 				F1EA149B29D374E300291765 /* Font Awesome 6 Free-Solid-900.otf in Resources */,
 				F11E3C8129CDD6AB003BE1EE /* Assets.xcassets in Resources */,
 				F1EA147829D35F5700291765 /* GoogleService-Info.plist in Resources */,
+				F142AE1529F9F0C3003CEB7D /* hybrid-storytellers-8DrHBSsC-A4-unsplash.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

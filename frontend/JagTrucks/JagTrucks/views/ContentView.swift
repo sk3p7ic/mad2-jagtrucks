@@ -10,8 +10,25 @@ import SwiftUI
 private struct HomeView: View {
     var body: some View {
         NavigationView {
-            Text("Hello world!")
-                .navigationTitle("Home")
+            VStack {
+                Text("JagTrucks")
+                    .font(.largeTitle)
+                    .bold()
+                    .foregroundColor(.yellow)
+                Spacer()
+                Text("Dining on campus,")
+                    .font(.title)
+                    .foregroundColor(.white)
+                Text("Made simple.")
+                    .font(.title)
+                    .foregroundColor(.white)
+                Spacer()
+            }
+                .padding()
+                .background(
+                    Image("home_bg")
+                        .blur(radius: 6.0)
+                )
         }
     }
 }
@@ -26,6 +43,7 @@ struct ContentView: View {
                 .tabItem {
                     Label("Home", systemImage: "house")
                 }
+                .toolbarBackground(.visible, for: .tabBar)
             HomeView()
                 .tabItem {
                     Label("Schedule", systemImage: "calendar")
