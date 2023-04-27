@@ -44,7 +44,9 @@ struct ContentView: View {
                     Label("Home", systemImage: "house")
                 }
                 .toolbarBackground(.visible, for: .tabBar)
-            HomeView()
+            SchedulePickerView()
+                .environmentObject(scheduleState)
+                .environmentObject(truckState)
                 .tabItem {
                     Label("Schedule", systemImage: "calendar")
                 }

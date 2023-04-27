@@ -14,6 +14,7 @@
 		F11F9A9E29F4D20A004005F2 /* FoodTruckListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11F9A9D29F4D20A004005F2 /* FoodTruckListView.swift */; };
 		F1300C6429E8342200742C99 /* FoodTruckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1300C6329E8342200742C99 /* FoodTruckView.swift */; };
 		F142AE1529F9F0C3003CEB7D /* hybrid-storytellers-8DrHBSsC-A4-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F142AE1429F9F0C3003CEB7D /* hybrid-storytellers-8DrHBSsC-A4-unsplash.jpg */; };
+		F142AE1729F9FDC1003CEB7D /* SchedulePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F142AE1629F9FDC1003CEB7D /* SchedulePickerView.swift */; };
 		F144157629DF4CDF0003E5F3 /* TruckStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F144157529DF4CDF0003E5F3 /* TruckStateModel.swift */; };
 		F144157829DF52470003E5F3 /* ScheduleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F144157729DF52470003E5F3 /* ScheduleModel.swift */; };
 		F144157A29DF58C50003E5F3 /* Schedules.swift in Sources */ = {isa = PBXBuildFile; fileRef = F144157929DF58C50003E5F3 /* Schedules.swift */; };
@@ -45,6 +46,7 @@
 		F11F9A9D29F4D20A004005F2 /* FoodTruckListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTruckListView.swift; sourceTree = "<group>"; };
 		F1300C6329E8342200742C99 /* FoodTruckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTruckView.swift; sourceTree = "<group>"; };
 		F142AE1429F9F0C3003CEB7D /* hybrid-storytellers-8DrHBSsC-A4-unsplash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "hybrid-storytellers-8DrHBSsC-A4-unsplash.jpg"; path = "../../../../../../Downloads/hybrid-storytellers-8DrHBSsC-A4-unsplash.jpg"; sourceTree = "<group>"; };
+		F142AE1629F9FDC1003CEB7D /* SchedulePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulePickerView.swift; sourceTree = "<group>"; };
 		F144157529DF4CDF0003E5F3 /* TruckStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TruckStateModel.swift; sourceTree = "<group>"; };
 		F144157729DF52470003E5F3 /* ScheduleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleModel.swift; sourceTree = "<group>"; };
 		F144157929DF58C50003E5F3 /* Schedules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedules.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				F1EA148B29D3731C00291765 /* SignInPageView.swift */,
 				F1300C6329E8342200742C99 /* FoodTruckView.swift */,
 				F11F9A9D29F4D20A004005F2 /* FoodTruckListView.swift */,
+				F142AE1629F9FDC1003CEB7D /* SchedulePickerView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				F15DE0C729DF327F0075E967 /* FirebaseInit.swift in Sources */,
 				F15DE0C229DF29E20075E967 /* TruckModel.swift in Sources */,
 				F15DE0C429DF31030075E967 /* FoodTrucks.swift in Sources */,
+				F142AE1729F9FDC1003CEB7D /* SchedulePickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
