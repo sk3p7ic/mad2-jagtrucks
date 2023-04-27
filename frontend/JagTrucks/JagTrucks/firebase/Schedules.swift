@@ -22,12 +22,12 @@ func getScheduleForMonth(month: Int8, year: Int32) async -> FirebaseMonthlySched
 func getAllScheduleItems() async -> [FirebaseMonthlySchedule] {
     print("Getting the schedule items")
     var scheds = [FirebaseMonthlySchedule]()
-    let docs = try? await db.collection("schedules").getDocuments()
-    print(docs)
+    let docs = try? await db.collection("schedule").getDocuments()
     if docs == nil {
         print("Could not get schedules")
         return [FirebaseMonthlySchedule]()
     }
+    print(docs!.documents)
     for d in docs!.documents {
         print(d)
         scheds.append(FirebaseMonthlySchedule(qdoc: d))

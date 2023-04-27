@@ -17,7 +17,8 @@ struct FirebaseMonthlyScheduleEntry {
     init(data: [String: Any]) {
         startTime = data["start_time"]! as! Timestamp
         endTime = data["end_time"]! as! Timestamp
-        truckId = data["truck_id"]! as! String
+        let truckIdRef = data["truck_id"]! as! DocumentReference
+        truckId = truckIdRef.documentID
     }
 }
 
