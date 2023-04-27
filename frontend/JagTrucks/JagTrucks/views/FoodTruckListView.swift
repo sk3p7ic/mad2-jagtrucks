@@ -38,7 +38,7 @@ private struct FoodTruckListingItem: View {
                 await updateTruck()
             }
             .padding()
-        }
+        }.background(Color.green)//Testing purposes
     }
     
     func updateTruck() async {

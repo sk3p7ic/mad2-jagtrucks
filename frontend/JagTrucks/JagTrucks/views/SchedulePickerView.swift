@@ -75,10 +75,19 @@ struct SchedulePickerView: View {
                     month = Int8((months.firstIndex(of: month_str) ?? 0) + 1)
                     year = Int16(v.formatted(.dateTime.year())) ?? 2023
                 }
+                Text("This month's venders").font(.headline)
+                
                 ForEach(scheduleState.schedule[getKey(m: $month, y: $year)]?.listings ?? [], id: \.truckId) { listing in
-                    ScheduleListing(listing: listing)
-                        .environmentObject(truckState)
+                    NavigationLink{
+                        FoodTruckView(truckId: listing.truckId)
+                            .environmentObject(truckState)
+                        
+                    } label: {
+                        ScheduleListing(listing: listing)
+                            .environmentObject(truckState)
+                    }
                 }
+                
             }
             .task {
                 await scheduleState.getAllMonthlySchedules()
@@ -93,3 +102,14 @@ struct SchedulePickerView_Previews: PreviewProvider {
         SchedulePickerView().environmentObject(masterSchedule).environmentObject(masterTruckState)
     }
 }
+
+/*
+
+    ForEach(truckId: listing.truckId) ?? FirebaseFoodTruck(){ truck in trucks
+      NavigationLink {
+    FoodTruckView(truckId:listing.truckId )
+        .environmentObject()
+} label: {
+  ScheduleListing
+ }
+*/
